@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+</head>
+
+<body>
+    <h1>GitHub Repositories</h1>
+    {% if repos %}
+    <ul>
+        {% for repo in repos %}
+        <li>
+            <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+            - {{ repo.description }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No repositories found or there was an error fetching the data.</p>
+    {% endif %}
+</body>
+
+</html>
